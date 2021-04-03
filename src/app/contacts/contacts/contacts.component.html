@@ -44,6 +44,13 @@
       <input name="education" type="text" [(ngModel)]="contact.education" />
     </ng-template>
   </fieldset>
+  <input value="Save" type="submit" (click)="saveContact()" />
 </form>
-
-<pre>{{ contact | json }}</pre>
+<pre>{{contact | json }}</pre>
+<ul *ngIf="contacts.length>0; else empty">
+  <li *ngFor="let contact of contacts">
+    <span>{{ contact.name }}</span>
+    <input value="Delete" type="button" (click)="deleteContact(contact)" />
+  </li>
+</ul>
+<ng-template #empty> <i>No data yet</i> </ng-template>
