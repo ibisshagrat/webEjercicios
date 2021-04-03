@@ -27,8 +27,23 @@
       <input name="gender" value="f" type="radio" [(ngModel)]="contact.gender" />
       <i>Female</i>
     </section>
+    <section>
+      <label for="workStatus">Work Status</label>
+      <select name="workStatus" [(ngModel)]="contact.workStatus">
+        <option *ngFor="let wkSt of workStatuses" [value]="wkSt.id">
+          <span>{{ wkSt.description }}</span>
+        </option>
+      </select>
+    </section>
+    <section *ngIf="contact.workStatus=='3'; else education">
+      <label for="company">Company Name</label>
+      <input name="company" type="text" [(ngModel)]="contact.company" />
+    </section>
+    <ng-template #education>
+      <label for="education">Education</label>
+      <input name="education" type="text" [(ngModel)]="contact.education" />
+    </ng-template>
   </fieldset>
 </form>
-
 
 <pre>{{ contact | json }}</pre>
