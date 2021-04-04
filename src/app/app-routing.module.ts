@@ -21,6 +21,10 @@ const routes: Routes = [
     loadChildren: () => import('./car/car.module').then(m => m.CarModule)
   },
   {
+    path: 'converter',
+    loadChildren: () => import('./converter/converter.module').then(m => m.ConverterModule)
+  },
+  {
     path: 'heroes',
     component: HeroesComponent
   },
