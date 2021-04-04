@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  appName: 'Dim43'
+  appName: 'Dim43',
+  unitsCulture: 'metric'
 };
 
 /*
