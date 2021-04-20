@@ -6,6 +6,7 @@ import { MainComponent } from './shell/main/main.component';
 import { FooterComponent } from './shell/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -13,7 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [ShellComponent, HeaderComponent, MainComponent, FooterComponent, NotFoundComponent],
   imports: [
-    CommonModule, RouterModule
+    CommonModule, RouterModule, FontAwesomeModule
   ],
   exports: [ShellComponent]
 })
