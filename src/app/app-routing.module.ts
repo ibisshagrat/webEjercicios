@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './core/not-found/not-found.component';
-import { EstudiosComponent } from './estudios/estudios/estudios.component';
 import { HeroesComponent } from './heroes/heroes.component';
 
 const routes: Routes = [
@@ -32,6 +31,10 @@ const routes: Routes = [
   {
     path: 'estudios',
     loadChildren: () => import('./estudios/estudios.module').then(m => m.EstudiosModule)
+  },
+  {
+    path: 'partidos',
+    loadChildren: () => import('./partidos/partidos.module').then(m => m.PartidosModule)
   },
   {
     path: 'not-found',

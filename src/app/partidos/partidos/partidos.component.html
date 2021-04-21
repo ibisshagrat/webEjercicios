@@ -1,0 +1,12 @@
+<section>
+  <label for="listaPartidos">Lista partidos</label>
+  <select name="listaPartidos" [(ngModel)]="idPartido" (change)="getPartido()">
+   <option *ngFor="let part of partidos" [value]="part.id">
+      <span>{{ part.idLocal }} - {{ part.idVisitante }}</span>
+   </option>
+  </select>
+</section>
+
+
+<app-partido [partido]="partido">
+</app-partido>
