@@ -37,6 +37,10 @@ const routes: Routes = [
     loadChildren: () => import('./partidos/partidos.module').then(m => m.PartidosModule)
   },
   {
+    path: 'propietarios',
+    loadChildren: () => import('./propietarios/propietarios.module').then(m => m.PropietariosModule)
+  },
+  {
     path: 'not-found',
     component: NotFoundComponent
   },
