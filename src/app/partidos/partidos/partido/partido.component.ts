@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Partido } from '../../models/partido';
 
 @Component({
@@ -8,7 +8,8 @@ import { Partido } from '../../models/partido';
   ]
 })
 export class PartidoComponent implements OnInit {
-  @Input() public partido:Partido
+  @Input() public partido:Partido;
+  @Output() public mostrarTarjeta = new EventEmitter<boolean>();
 
   constructor() { }
 

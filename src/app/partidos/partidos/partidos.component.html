@@ -1,12 +1,22 @@
-<section>
+<div>
   <label for="listaPartidos">Lista partidos</label>
   <select name="listaPartidos" [(ngModel)]="idPartido" (change)="getPartido()">
-   <option *ngFor="let part of partidos" [value]="part.id">
+    <option *ngFor="let part of partidos" [value]="part.id">
       <span>{{ part.idLocal }} - {{ part.idVisitante }}</span>
-   </option>
+    </option>
   </select>
-</section>
+</div>
 
+<div *ngIf="idPartido!=null">
+  <app-partido  [partido]="partido" 
+                (mostrarTarjeta)="mostrarTarjetas($event)">
+  </app-partido>
+</div>
 
-<app-partido [partido]="partido">
-</app-partido>
+<div *ngIf="muestraTarjetas">
+  <h3>Tarjetas</h3>
+  <div *ngFor="let tarjeta of tarjetas">
+    <app-tarjeta [tarjeta]="tarjeta">
+    </app-tarjeta>
+  </div>
+</div>

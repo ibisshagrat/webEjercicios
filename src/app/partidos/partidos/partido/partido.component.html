@@ -1,2 +1,14 @@
-<h3>Partido</h3>
-<pre> {{ partido | json }} </pre>
+<section>
+  <h3>Partido del </h3>
+  <div>{{ partido.idLocal }} {{ partido.marcadorLocal }}  - {{ partido.marcadorVisitante }} {{ partido.idVisitante }}
+  </div>
+  <section *ngIf="partido.hayTarjetas; else botonDeshabilitado">
+    <button class="btn btn-info"
+            (click)="mostrarTarjeta.emit(true)">
+            Mostrar Tarjetas
+    </button>
+  </section>
+  <ng-template #botonDeshabilitado>
+    <button class="btn btn-secondary" disabled>Mostrar Tarjetas</button>
+  </ng-template>
+</section>

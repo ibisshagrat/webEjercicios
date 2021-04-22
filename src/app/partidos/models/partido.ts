@@ -8,4 +8,7 @@ export interface Partido {
   idCompeticion: string;
   sucesos: Suceso[];
   timeStamp: number;
+  marcadorVisitante?: number;
+  marcadorLocal?: number;
+  hayTarjetas?: boolean;
 }
