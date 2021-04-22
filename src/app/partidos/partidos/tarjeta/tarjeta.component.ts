@@ -14,7 +14,6 @@ import { Suceso } from '../../models/suceso';
 export class TarjetaComponent implements OnInit {
   @Input() tarjeta:Suceso;
   tarjetaIcono = faSquareFull;
-  //colorTarjeta: string;
   esAmarilla: boolean = false;
   esRoja: boolean = false;
 
@@ -27,7 +26,6 @@ export class TarjetaComponent implements OnInit {
 
   determinarColor() {
     if (this.tarjeta.tipoTarjeta == 1) {
-      //this.colorTarjeta = "tarjetaRoja";
       this.esRoja =  true
     } else if (this.tarjeta.tipoTarjeta == 2) {
       this.esAmarilla = true;
