@@ -27,7 +27,6 @@ export class PartidosComponent implements OnInit {
     this.calcularResultado();
     this.isTarjetas();
     this.mostrarTarjetas(false);
-
   }
 
   public calcularResultado(): void {
