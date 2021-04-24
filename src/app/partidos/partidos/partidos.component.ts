@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { Partido } from '../models/partido';
 import { Suceso } from '../models/suceso';
-
+import { PartidosObtenerService } from '../services/partidos-obtener.service';
 @Component({
   selector: 'app-partidos',
   templateUrl: './partidos.component.html',
   styles: [],
 })
 export class PartidosComponent implements OnInit {
-  public partidos: Partido[] = environment.partidos;
+  public partidos: Partido[] = [];
   public partido: Partido = null;
   public idPartido: number;
   public muestraTarjetas: boolean = false;
   public tarjetas: Suceso[] = [];
 
-  constructor() {}
+  constructor(private partidosObtener: PartidosObtenerService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.partidos = this.partidosObtener.getPartidos();
+  }
 
   public getPartido(): void {
     let resultado: Partido = this.partidos.filter(

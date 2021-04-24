@@ -7,8 +7,16 @@ import { FormsModule } from '@angular/forms';
 import { PartidoComponent } from './partidos/partido/partido.component';
 import { TarjetaComponent } from './partidos/tarjeta/tarjeta.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PartidosObtenerService } from './services/partidos-obtener.service';
+import { PartidosService } from './services/partidos.service';
+import { environment } from 'src/environments/environment';
+import { PartidosEnvironmentService } from './services/partidos-environment.service';
 
-
+const factoriaObtenedor = (partidoService: PartidosService) => {
+  if (environment.obtenedorPartidos == "environment") {
+    return new PartidosEnvironmentService(partidoService)
+  }
+};
 @NgModule({
   declarations: [PartidosComponent, PartidoComponent, TarjetaComponent],
   imports: [
@@ -16,6 +24,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PartidosRoutingModule,
     FormsModule,
     FontAwesomeModule
+  ],
+  providers: [
+    {
+      provide: PartidosObtenerService,
+      useFactory: factoriaObtenedor,
+      deps: [PartidosService]
+    }
   ]
 })
 export class PartidosModule { }

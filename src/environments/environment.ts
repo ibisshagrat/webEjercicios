@@ -8,6 +8,8 @@ export const environment = {
   unitsCulture: 'metric',
   host: 'http://localhost:8099',
   hostControladores: 'http://localhost:8099/api/',
+  hostHateoas: 'https://datos-deportivos-api.herokuapp.com/api',
+  obtenedorPartidos: 'environment',
   partidos: [
     {
       id:1,
