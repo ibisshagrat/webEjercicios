@@ -11,10 +11,13 @@ import { PartidosObtenerService } from './services/partidos-obtener.service';
 import { PartidosService } from './services/partidos.service';
 import { environment } from 'src/environments/environment';
 import { PartidosEnvironmentService } from './services/partidos-environment.service';
+import { PartidosApiService } from './services/partidos-api.service';
 
 const factoriaObtenedor = (partidoService: PartidosService) => {
   if (environment.obtenedorPartidos == "environment") {
-    return new PartidosEnvironmentService(partidoService)
+    return new PartidosEnvironmentService(partidoService);
+  } else if (environment.obtenedorPartidos == "api") {
+    return new PartidosApiService(partidoService);
   }
 };
 @NgModule({

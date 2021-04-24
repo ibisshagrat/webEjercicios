@@ -9,7 +9,8 @@ export const environment = {
   host: 'http://localhost:8099',
   hostControladores: 'http://localhost:8099/api/',
   hostHateoas: 'https://datos-deportivos-api.herokuapp.com/api',
-  obtenedorPartidos: 'environment',
+  hostDatosDeportivos: 'https://datos-deportivos-api.herokuapp.com/api',
+  obtenedorPartidos: 'api',
   partidos: [
     {
       id:1,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Partido } from '../models/partido';
 import { Suceso } from '../models/suceso';
+import { PartidosApiNoInversoService } from '../services/partidos-api-no-inverso.service';
 import { PartidosObtenerService } from '../services/partidos-obtener.service';
 @Component({
   selector: 'app-partidos',
@@ -14,10 +15,14 @@ export class PartidosComponent implements OnInit {
   public muestraTarjetas: boolean = false;
   public tarjetas: Suceso[] = [];
 
-  constructor(private partidosObtener: PartidosObtenerService) {}
+  constructor(private partidosApi: PartidosApiNoInversoService) {}
 
   ngOnInit(): void {
-    this.partidos = this.partidosObtener.getPartidos();
+    this.partidosApi.getPartidos().subscribe(response => {
+      this.partidos = this.partidosApi.extraerPartidos(response);
+      //console.log(this.partidos);
+    }
+      );
   }
 
   public getPartido(): void {
