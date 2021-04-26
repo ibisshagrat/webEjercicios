@@ -1,0 +1,30 @@
+<h1>{{tipoAcceso}} participante</h1>
+
+<form #formParticipantes=ngForm>
+<div class="row">
+  <div class="col-1">
+    <label for="nombrePropietario">Nombre</label>
+  </div>
+  <div class="col-3">
+    <input id="nombrePropietario" type="text" [(ngModel)]="propietario.nombre" name="id" required>
+  </div>
+</div>
+<div class="row">
+  <div class="col-1">
+    <label for="apellido1Prop">Primer Apellido</label>
+  </div>
+  <div class="col-3">
+    <input type="text" id="apellido1Prop" [(ngModel)]="propietario.apellido1" name="apellido1" required>
+  </div>
+  <div class="col-1">
+    <label for="apellido2Prop">Segundo Apellido</label>
+  </div>
+  <div class="col-3">
+    <input type="text" id="apellido2Prop" [(ngModel)]="propietario.apellido2" name="apellido2">
+  </div>
+
+</div>
+<p>
+  <button id="botonAceptar" (click)="onEnviar()" class="btn btn-primary" [disabled]=!formParticipantes.form.valid>Aceptar</button>
+</p>
+</form>

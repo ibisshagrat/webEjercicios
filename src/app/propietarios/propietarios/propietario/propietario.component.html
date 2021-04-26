@@ -1,1 +1,6 @@
-<p>propietario works!</p>
+<div class="row">
+    <div class="col-4">{{propietario.nombre}} {{propietario.apellido1}} {{propietario.apellido2}}</div>
+    <div class="col-3">{{propietario.mail}}</div>
+    <div class="col-1"><button class="btn btn-primary" routerLink={{rutaEditar}}>Editar</button></div>
+    <div class="col-1"><button class="btn btn-primary" (click)="onBorrar(propietario)">Eliminar</button></div>
+</div>

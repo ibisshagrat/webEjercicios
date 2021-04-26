@@ -1,4 +1,6 @@
-export interface Propietario {
+import { Propietario } from "./propietario";
+
+export class PropietariosImp implements Propietario{
   id: number;
   nombre: string;
   nif: string;
