@@ -1,0 +1,23 @@
+<h1>{{tipoAcceso}} participante</h1>
+
+<form #formParticipantes=ngForm>
+<div class="row">
+  <div class="col-1">
+    <label for="nombreEquipo">Nombre</label>
+  </div>
+  <div class="col-auto">
+    <input id="nombreEquipo" type="text" [(ngModel)]="participante.nombre" name="id" required>
+  </div>
+</div>
+<div class="row">
+  <div class="col-1">
+    <label for="idEquipo">id</label>
+  </div>
+  <div class="col-auto">
+    <input type="text" id="idEquipo" [(ngModel)]="participante.id" name="nombre" required [readonly]="!esAlta">
+  </div>
+</div>
+<p>
+  <button id="botonAceptar" (click)="onEnviar()" class="btn btn-primary" [disabled]=!formParticipantes.form.valid>Aceptar</button>
+</p>
+</form>

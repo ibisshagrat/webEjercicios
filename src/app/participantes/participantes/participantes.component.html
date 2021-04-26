@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-10">
+    <h2>Participantes</h2>
+  </div>
+  <div class="col-2">
+    <button class="btn btn-primary" routerLink="alta">Alta participante</button>
+  </div>
+</div>
+<div *ngFor="let participante of participantes">
+  <app-participante [participante]="participante"
+                    (borrar)="borrarParticipante($event)"></app-participante>
+</div>

@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="col-2">{{participante.nombre}}</div>
+  <div class="col-auto"><button class="btn btn-primary" routerLink={{rutaEditar}}>Editar</button></div>
+  <div class="col-auto"><button class="btn btn-primary" (click)="onBorrar(participante.id)">Borrar</button></div>
+</div>
