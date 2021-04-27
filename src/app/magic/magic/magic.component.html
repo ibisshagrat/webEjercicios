@@ -1,6 +1,6 @@
-<div class="text-center" style="background-image: url('./assets/mtg.jpg'); background-repeat: repeat-y ; background-attachment: fixed; background-position: center;">
+<div class="text-center" id="mtg">
   <h2><img src="./assets/MagicLogo.png" alt="Magic: the Gathering"></h2>
-  <div>Tu aplicación de Magic: the Gathering definitiva.</div>
+  <div class="font-weight-bold">Tu aplicación de Magic: the Gathering definitiva.</div>
   <hr>
   <div>
     <span class="font-weight-bold">Elige una colección:</span>
@@ -12,9 +12,7 @@
   </div>
 
   <div *ngIf="codigoSet!=null">
-    <app-set  [set]="set"
-              [cartas]="cartas"
-              (mostrarCarta)="mostrarCarta($event)">
+    <app-set [set]="set" [cartas]="cartas" (mostrarCarta)="mostrarCarta($event)">
     </app-set>
   </div>
 </div>
