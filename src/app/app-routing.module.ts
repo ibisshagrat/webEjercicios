@@ -45,6 +45,10 @@ const routes: Routes = [
     loadChildren: () => import('./participantes/participantes.module').then(m => m.ParticipantesModule)
   },
   {
+    path: 'magic',
+    loadChildren: () => import('./magic/magic.module').then(m => m.MagicModule)
+  },
+  {
     path: 'not-found',
     component: NotFoundComponent
   },

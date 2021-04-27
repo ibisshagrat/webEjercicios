@@ -1,0 +1,19 @@
+<div class="text-center max-width">
+  <h2><img src="./assets/MagicLogo.png" alt="Magic: the Gathering"></h2>
+  <div>Tu aplicación de Magic: the Gathering definitiva.</div>
+  <hr>
+  <div>Elige una colección:
+    <select name="sets" [(ngModel)]="codigoSet" (change)="cargarSet()">
+      <option *ngFor="let s of sets" [value]="s.code">
+        <span>{{ s.name }}</span>
+      </option>
+    </select>
+  </div>
+
+  <div *ngIf="codigoSet!=null">
+    <app-set  [set]="set"
+              [cartas]="cartas"
+              (mostrarCarta)="mostrarCarta($event)">
+    </app-set>
+  </div>
+</div>

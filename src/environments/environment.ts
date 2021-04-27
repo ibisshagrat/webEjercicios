@@ -10,6 +10,7 @@ export const environment = {
   hostControladores: 'http://localhost:8099/api/',
   hostHateoas: 'https://datos-deportivos-api.herokuapp.com/api',
   hostDatosDeportivos: 'https://datos-deportivos-api.herokuapp.com/api',
+  hostMagic: 'https://api.magicthegathering.io/v1/',
   obtenedorPartidos: 'api',
   partidos: [
     {

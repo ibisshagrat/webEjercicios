@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faCaretSquareUp, faFutbol } from '@fortawesome/free-regular-svg-icons';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faDragon } from '@fortawesome/free-solid-svg-icons';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   futbol = faFutbol;
   cajaFlecha =faCaretSquareUp
   book = faBook;
+  dragon = faDragon;
 
   constructor() { }
 
