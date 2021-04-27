@@ -5,7 +5,8 @@ import { Carta } from '../models/carta';
   selector: 'app-carta',
   templateUrl: './carta.component.html',
   styles: [
-  ]
+    '.card { background-color: rgba(255,255,255,0.5); }'
+    ]
 })
 export class CartaComponent implements OnInit {
 

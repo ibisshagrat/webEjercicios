@@ -7,7 +7,9 @@ import { MagicService } from '../services/magic.service';
 @Component({
   selector: 'app-magic',
   templateUrl: './magic.component.html',
-  styles: [],
+  styles: [
+    'div.mtg: {background-image: url("./assets/mtg.jpg")}'
+  ],
 })
 export class MagicComponent implements OnInit {
   sets: SetMagic[] = [];
