@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Partido } from '../models/partido';
 import { Suceso } from '../models/suceso';
 import { PartidosApiNoInversoService } from '../services/partidos-api-no-inverso.service';
-import { PartidosObtenerService } from '../services/partidos-obtener.service';
 @Component({
   selector: 'app-partidos',
   templateUrl: './partidos.component.html',
@@ -20,7 +19,6 @@ export class PartidosComponent implements OnInit {
   ngOnInit(): void {
     this.partidosApi.getPartidos().subscribe(response => {
       this.partidos = this.partidosApi.extraerPartidos(response);
-      //console.log(this.partidos);
     }
       );
   }
