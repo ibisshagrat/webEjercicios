@@ -15,10 +15,16 @@ export class CartaComponent implements OnInit {
   @Output() mostrarCarta = new EventEmitter();
   flavor: string
   longitudMax: number = 50;
+  dataTarget: string;
 
   constructor() { }
 
   ngOnInit(): void {
+/*     const dataToggle = document.getElementById("imagenCarta");
+    dataToggle.dataset.target = this.carta.id;
+    console.log(dataToggle);
+ */
+    this.dataTarget = `#${this.carta.id}`
     if (this.carta.flavor !=null) {
       if (this.carta.flavor.length > this.longitudMax) {
         this.flavor = this.carta.flavor.substr(0, this.longitudMax)+"...";
