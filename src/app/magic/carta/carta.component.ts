@@ -6,7 +6,8 @@ import { Carta } from '../models/carta';
   templateUrl: './carta.component.html',
   styles: [
     '.card { background-color: rgba(255,255,255,0.5); }',
-    'img { cursor: pointer; }'
+    'img { cursor: pointer; }',
+    '.imagenModal { border-radius: 15px }'
     ]
 })
 export class CartaComponent implements OnInit {
@@ -22,10 +23,7 @@ export class CartaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-/*     const dataToggle = document.getElementById("imagenCarta");
-    dataToggle.dataset.target = this.carta.id;
-    console.log(dataToggle);
- */
+
     this.dataTarget = `${this.carta.id}`;
     this.dataTargetId = `#${this.carta.id}`;
     if (this.carta.flavor !=null) {
