@@ -1,21 +1,11 @@
 <div class="col-2">
   <div class="card align-items-center" style="width: 12rem;">
-      <img [src]=" carta.imageUrl" class="card-img-top" [alt]="carta.name" data-toggle="modal" [attr.data-target]="dataTargetId" type="button" id="imagenCarta">
+      <img [src]=" carta.imageUrl" class="card-img-top" [alt]="carta.name" data-toggle="modal" data-target="#cartaModal" type="button" id="imagenCarta" (click)="mandarCarta()">
     <div class="card-body">
       <h5 class="card-title">{{carta.name}}</h5>
       <p class="card-text">{{carta.colors}} {{carta.type}}
         <br><small class="font-italic smaller">{{flavor}}</small>
       </p>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" [id]="dataTarget" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="background-color: transparent;">
-      <div class="modal-body">
-        <img [src]=" carta.imageUrl" [alt]="carta.name" class="imagenModal">
-      </div>
     </div>
   </div>
 </div>

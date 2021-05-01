@@ -6,6 +6,7 @@ import {
   //ViewContainerRef,
 } from '@angular/core';
 import { Carta } from '../models/carta';
+import { CartaImp } from '../models/carta-imp';
 import { SetMagic } from '../models/set-magic';
 import { MagicService } from '../services/magic.service';
 
@@ -17,15 +18,13 @@ import { MagicService } from '../services/magic.service';
   ],
 })
 export class MagicComponent implements OnInit {
-//  @ViewChild('modal_carta') modal_carta: TemplateRef<any>;
-//  @ViewChild('vc', { read: ViewContainerRef }) vc: ViewContainerRef;
 
   backdrop: any;
   sets: SetMagic[] = [];
   codigoSet: string = null;
   set: SetMagic;
   cartas: Carta[];
-  carta: Carta;
+  carta: Carta = new CartaImp();
 
   constructor(private magicService: MagicService) {}
 
@@ -46,38 +45,7 @@ export class MagicComponent implements OnInit {
     });
   }
 
-/*     title = 'angulartoastr';
-    showModal: boolean;
-    mostrarCarta(carta: Carta) {
-      this.carta = carta;
-      console.log("modal", carta);
-      this.showModal = true; // Show-Hide Modal Check
-    }
-    //Bootstrap Modal Close event
-    hide() {
-      this.showModal = false;
-    } */
-
-/*    mostrarCarta(carta: Carta) {
-    console.log("modal", carta);
+  mostrarCarta(carta: Carta) {
     this.carta = carta;
-    let view = this.modal_carta.createEmbeddedView(null);
-    this.vc.insert(view);
-    this.modal_carta.elementRef.nativeElement.previousElementSibling.classList.remove(
-      'fade'
-    );
-    this.modal_carta.elementRef.nativeElement.previousElementSibling.classList.add(
-      'modal-open'
-    );
-    this.modal_carta.elementRef.nativeElement.previousElementSibling.style.display =
-      'block';
-    this.backdrop = document.createElement('DIV');
-    this.backdrop.className = 'modal-backdrop';
-    document.body.appendChild(this.backdrop);
   }
-
-  closeDialog() {
-    this.vc.clear();
-    document.body.removeChild(this.backdrop);
-  } */
 }
