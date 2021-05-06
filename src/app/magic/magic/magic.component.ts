@@ -14,7 +14,7 @@ import { MagicService } from '../services/magic.service';
   selector: 'app-magic',
   templateUrl: './magic.component.html',
   styles: [
-    '#mtg { background-image: url("./assets/mtg.jpg"); background-repeat: repeat-y; background-attachment: fixed; background-position: center; height: 88vh }',
+    '#mtg { background-image: url("./assets/mtg.jpg"); background-repeat: repeat-y; background-attachment: fixed; background-position: center; min-height: 60vmax}',
   ],
 })
 export class MagicComponent implements OnInit {
